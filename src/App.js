@@ -15,8 +15,8 @@ const ProfilePage = () => {
     setTimeout(() => {
       // Simulate user data from the API
       setUser({
-        name: '',
-        email: '',
+        name: 'John Doe',
+        email: 'johndoe@example.com',
         avatar: 'https://masterpiecer-images.s3.yandex.net/a642bfd66f7711eeb75fe6d39d9a42a4:upscaled', // Assuming the avatar.png is in the public folder
       });
     }, 1000);
@@ -33,7 +33,7 @@ const ProfilePage = () => {
   };
 
   if (error) return <div>{error}</div>;
-  if (!user) return <div>Loading...</div>;
+  if (!user.name) return <div>Loading...</div>;
 
   return (
     <div className="profile-page">
