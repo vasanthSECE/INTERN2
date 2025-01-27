@@ -14,24 +14,21 @@ const ProfilePage = () => {
     // Mock API Call to simulate fetching user data
     setTimeout(() => {
       // Simulate user data from the API
-      const haserror=false;
-      if(haserror)
-      {
-        setError('error occurs')
-      }else{
-      setUser({
-        name: 'John Doe',
-        email: 'johndoe@example.com',
-        avatar: 'https://masterpiecer-images.s3.yandex.net/a642bfd66f7711eeb75fe6d39d9a42a4:upscaled', // Assuming the avatar.png is in the public folder
-      });
-    }
+      const hasError = false;
+      if (hasError) {
+        setError('An error occurred while fetching user data');
+      } else {
+        setUser({
+          name: 'John Doe',
+          email: 'johndoe@example.com',
+          avatar: 'https://masterpiecer-images.s3.yandex.net/a642bfd66f7711eeb75fe6d39d9a42a4:upscaled', // Assuming the avatar.png is in the public folder
+        });
+      }
     }, 1000);
   }, []);
 
   const handleSubmit = (values, { setSubmitting }) => {
     // Update user information on form submission
-    const handleerror=false;
-    
     setUser({
       ...user,
       name: values.name,
